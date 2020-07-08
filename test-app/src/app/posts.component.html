@@ -1,0 +1,15 @@
+<div class="postBody" *ngFor="let post of posts">
+    <h2> {{ post[0] }} </h2>
+    <p> {{ post[1] }} </p>
+    <div>
+        <button type="button" (click)="post[2] = post[2] + 1" mat-button>+</button>
+        {{ post[2] }}
+        <button type="button" (click)="post[2] = post[2] - 1" mat-button>-</button>
+    </div>
+</div>
+
+<form (ngSubmit)="addNewPost(f)" #f="ngForm">
+    <p><input type="text" name='title' placeholder="Post Title" ngModel required></p>
+    <p><input type="text" name='content' placeholder="Post Content" ngModel required></p>
+    <button type="submit" mat-button color='primary'>Add New Post?</button>
+</form>

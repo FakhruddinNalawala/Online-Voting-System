@@ -1,0 +1,12 @@
+<form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="6px" (ngSubmit)="addNewPost(f)" #f="ngForm">
+    <mat-form-field>
+        <mat-label>Title of the Post</mat-label>
+        <input type="text" matInput required ngModel name="title">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Post Contents</mat-label>
+        <textarea matInput required ngModel name="contents"></textarea>
+    </mat-form-field>
+    <button type="submit" mat-button color='primary' [disabled]="f.invalid">Add New Post?</button>
+    <button type="button" mat-button color='primary' routerLink="/view">Cancel</button>
+</form>
