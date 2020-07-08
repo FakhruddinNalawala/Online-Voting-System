@@ -16,6 +16,7 @@ export class ToolbarComponent implements OnInit {
 
   onSidenavToggle() {
     this.sidenavToggle.emit();
+    console.log("Clicked?")
   }
 
 }

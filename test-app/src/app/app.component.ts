@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,8 @@ export class AppComponent {
   v=document.getElementById('v');
 
   constructor() {  }
+
+  clicked() {
+    console.log("Running?")
+  }
 }
