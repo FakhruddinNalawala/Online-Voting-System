@@ -26,3 +26,10 @@ Created using:
 * NgRx (Proposed)
 * Karma (Proposed)
 * Protractor (Proposed)
+
+Pending:
+* Frontend Components are ready, but some business logic is not yet implemented:
+  * Certain links and components should be hidden based on URL (Logged in or not)
+  * Firebase (Database) is not yet linked to front-end
+  * Authentication using Hashing
+  * Test Cases
