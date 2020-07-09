@@ -32,6 +32,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
       case 'c':
       case 'v':
         {
+          console.log('Posts');
           this.li.style.display = 'none';
           this.s.style.display = 'none';
           this.c.style.display = 'inline';

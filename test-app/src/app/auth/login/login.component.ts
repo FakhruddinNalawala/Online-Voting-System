@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { formatCurrency } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
   passList = ['12345678','12345678'];
   permList = ['admin','user'];
 
-  constructor() {  }
+  @Output() goToView = new EventEmitter<object>();
+
+  constructor(public router: Router) {  }
 
   ngOnInit(): void {
   }
@@ -25,6 +27,8 @@ export class LoginComponent implements OnInit {
       if (index>-1) {
         if (form.value.password == this.passList[index]) {
           console.log("Correct Input!");
+          this.goToView.emit(['v',[this.userList[index],this.permList[index]]]);
+          this.router.navigate(['/view'])
         } else  {
           console.log("Invalid Input!")
         }
