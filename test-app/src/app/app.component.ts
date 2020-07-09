@@ -6,21 +6,11 @@ import { Component, AfterViewInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
   li; lo; s; c; v;
 
   constructor() {
-  }
-
-  ngAfterViewInit() {
-    this.li = document.getElementById('li');
-    this.lo = document.getElementById('li');
-    this.s = document.getElementById('s');
-    this.c = document.getElementById('c');
-    this.v = document.getElementById('v');
-    console.log(this.li, this.lo, this.s, this.c, this.v)
-
   }
 
   clicked() {
