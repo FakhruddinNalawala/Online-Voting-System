@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { SidenavComponent } from './navigation/sidenav/sidenav.component';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +6,22 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
-  l=document.getElementById('l');
-  s=document.getElementById('s');
-  c=document.getElementById('c');
-  v=document.getElementById('v');
+  li; lo; s; c; v;
 
-  constructor() {  }
+  constructor() {
+  }
+
+  ngAfterViewInit() {
+    this.li = document.getElementById('li');
+    this.lo = document.getElementById('li');
+    this.s = document.getElementById('s');
+    this.c = document.getElementById('c');
+    this.v = document.getElementById('v');
+    console.log(this.li, this.lo, this.s, this.c, this.v)
+
+  }
 
   clicked() {
     console.log("Running?")

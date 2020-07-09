@@ -1,17 +1,21 @@
 <section class="posts" fxLayout="column" fxLayoutAlign="flex-begin center">
     <div *ngFor="let post of posts">
-        <mat-card [class.upVote]="post[4]>0" [class.downVote]="post[4]<0">
+        <mat-card>
             <mat-card-title> {{post[1]}} </mat-card-title>
             <mat-card-content>
                 {{post[2]}}
                 <br>
-                <button mat-icon-button (click)="vote(post, '+')">
-                    <mat-icon [ngClass]="{'userVote': post[4]>0}">thumb_up</mat-icon>
-                </button>
+                <span [class.upVote]="post[4]>0">
+                    <button mat-icon-button (click)="vote(post, '+')">
+                        <mat-icon [ngClass]="{'userVote': post[4]>0}">arrow_upward</mat-icon>
+                    </button>
+                </span>
                 {{post[3]}}
-                <button mat-icon-button (click)="vote(post, '-')" [ngClass]="{'userVote': post[4]<0}">
-                    <mat-icon [class.userVote]="post[4]<0">thumb_down</mat-icon>
-                </button>
+                <span [class.downVote]="post[4]<0">
+                    <button mat-icon-button (click)="vote(post, '-')" [ngClass]="{'userVote': post[4]<0}">
+                        <mat-icon [class.userVote]="post[4]<0">arrow_downward</mat-icon>
+                    </button>
+                </span>
             </mat-card-content>
         </mat-card>
     </div>
