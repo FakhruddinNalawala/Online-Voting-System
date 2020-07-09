@@ -3,7 +3,7 @@
     <app-sidenav></app-sidenav>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content  (goToView)="goToView('v')">
     <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar>
     <main>
       <router-outlet></router-outlet>

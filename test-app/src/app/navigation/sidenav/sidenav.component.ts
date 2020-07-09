@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,9 +11,12 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   @Output() sidenavToggle = new EventEmitter<void>();
 
   li; lo; s; c; v;
-  constructor() { }
+  constructor(public router: Router) { 
+
+  }
 
   ngOnInit(): void {
+    this.router.navigate(['/']);
   }
 
   ngAfterViewInit() {
@@ -32,7 +36,6 @@ export class SidenavComponent implements OnInit, AfterViewInit {
       case 'c':
       case 'v':
         {
-          console.log('Posts');
           this.li.style.display = 'none';
           this.s.style.display = 'none';
           this.c.style.display = 'inline';
@@ -54,5 +57,4 @@ export class SidenavComponent implements OnInit, AfterViewInit {
         }
     }
   }
-
 }
